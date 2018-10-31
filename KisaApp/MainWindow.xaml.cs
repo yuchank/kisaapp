@@ -39,20 +39,20 @@ namespace KisaApp
       this.socket.On("speed-cs", (v) =>
       {
         String s = String.Format("{0:F0}", Convert.ToDouble(v));
-        Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate { speed.Content = s; }));
+        // Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate { speed.Content = s; }));
       });
 
       this.socket.On("gear-cs", (v) =>
       {
         String s = String.Format("{0:F0}", v);
-        Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate { gear.Content = s; }));
+        // Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate { gear.Content = s; }));
       });
     }
 
     private void initialize()
     {
-      speed.Content = "0";
-      gear.Content = "0";
+      // speed.Content = "0";
+      // gear.Content = "0";
     }
 
     private void OnClosing(object sender, System.ComponentModel.CancelEventArgs e)

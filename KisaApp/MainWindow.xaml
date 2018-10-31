@@ -6,11 +6,5 @@
         xmlns:local="clr-namespace:KisaApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Loaded="OnLoaded" Closing="OnClosing">
-    <Grid>
-        <Button x:Name="BtnReset" Content="RESET" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="300" Height="399" Click="BtnReset_Click"/>
-        <Button x:Name="BtnAttack" Content="ATTACK" HorizontalAlignment="Left" Margin="315,10,0,0" VerticalAlignment="Top" Width="300" Height="399" Click="BtnAttack_Click"/>
-        <Label x:Name="speed" Content="Label" HorizontalAlignment="Left" Margin="679,62,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="gear" Content="Label" HorizontalAlignment="Left" Margin="679,252,0,0" VerticalAlignment="Top"/>
-
-    </Grid>
+  <local:SkinSelector/>
 </Window>
