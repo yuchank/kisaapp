@@ -2,8 +2,12 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:KisaApp"
+             xmlns:Skin2011="clr-namespace:KisaApp.Controls.Skin2011"
              StartupUri="MainWindow.xaml">
-    <Application.Resources>
-         
-    </Application.Resources>
+  <Application.Resources>
+    <!-- Resources scoped at the Application level should be defined here. -->
+    <ControlTemplate x:Key="SliderControlTemplate_2011LargeNeedle" TargetType="{x:Type Slider}">
+      <Skin2011:LargeNeedle HorizontalAlignment="Center" VerticalAlignment="Center" MaxAngle="80" MinAngle="-80" Maximum="{TemplateBinding Maximum}" Value="{TemplateBinding Value}" Minimum="{TemplateBinding Minimum}" />
+    </ControlTemplate>
+  </Application.Resources>
 </Application>

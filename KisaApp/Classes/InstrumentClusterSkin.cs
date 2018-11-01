@@ -22,7 +22,36 @@ namespace KisaApp.Classes
 
     void Skin_Initialized(object sender, EventArgs e)
     {
-
+      uxMPH = FindName("uxMPH") as Slider;
+      uxRPM = FindName("uxRPM") as Slider;
     }
+
+    public double MPH
+    {
+      get
+      {
+        return _MPH;
+      }
+      set
+      {
+        _MPH = value;
+        if (uxMPH != null) uxMPH.Value = value;
+      }
+    }
+
+    public double RPM
+    {
+      get
+      {
+        return _RPM;
+      }
+      set
+      {
+        _RPM = value;
+        if (uxRPM != null) uxRPM.Value = value;
+      }
+    }
+
+
   }
 }

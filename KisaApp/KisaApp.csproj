@@ -114,9 +114,24 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\InstrumentClusterSkin.cs" />
+    <Compile Include="Classes\Needle.cs" />
+    <Compile Include="Controls\Skin2011\LargeNeedle.xaml.cs">
+      <DependentUpon>LargeNeedle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Skin2011\Skin.xaml.cs">
+      <DependentUpon>Skin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SkinSelector.xaml.cs">
       <DependentUpon>SkinSelector.xaml</DependentUpon>
     </Compile>
+    <Page Include="Controls\Skin2011\LargeNeedle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Skin2011\Skin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -162,7 +177,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controls\Skin2011\" />
+    <Resource Include="Resources\2011\2011-Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\2011\2011-Overlay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\2011\Settings-Button.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
