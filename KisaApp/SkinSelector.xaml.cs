@@ -49,6 +49,8 @@ namespace KisaApp
       }
 
       _skins[0] = uxSkin2011;
+      _skins[0].Fuel = 90;
+      _skins[0].Temperature = 20;
 
       this.socket.On(Socket.EVENT_CONNECT, () => {
       });

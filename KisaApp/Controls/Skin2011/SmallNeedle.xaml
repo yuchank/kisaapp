@@ -1,0 +1,46 @@
+﻿<Classes:Needle x:Class="KisaApp.Controls.Skin2011.SmallNeedle"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KisaApp.Controls.Skin2011"
+      xmlns:Classes="clr-namespace:KisaApp.Classes"
+      mc:Ignorable="d"
+      x:Name="UserControl">
+  <Classes:Needle.Resources>
+    <Storyboard x:Key="uxSB_GameLoop" Duration="00:00:00.03">
+      <DoubleAnimation Storyboard.TargetName="LayoutRoot" Storyboard.TargetProperty="(UIElement.Opacity)" To="1" />
+    </Storyboard>
+  </Classes:Needle.Resources>
+
+  <Canvas x:Name="LayoutRoot">
+    <Canvas.Effect>
+      <DropShadowEffect BlurRadius="4" ShadowDepth="2" Opacity="0.4"/>
+    </Canvas.Effect>
+    <Canvas x:Name="uxNeedle"
+	    Height="63"
+	    Width="8"
+	    Background="{x:Null}"
+	    HorizontalAlignment="Left"
+	    VerticalAlignment="Top" RenderTransformOrigin="0.45,0.94" Canvas.Left="-3.5" Canvas.Top="-59">
+      <Path
+	    	Canvas.Left="0.19110107421875"
+		    Canvas.Top="0"
+		    Height="63"
+		    Width="6.92864990234375"
+		    Stretch="Fill"
+		    Opacity="1"
+		    Data="M 5.706298828125,0.025665283203125 C5.706298828125,0.025665283203125 7.1197509765625,59.227081298828125 7.1197509765625,59.227081298828125 7.1197509765625,59.227081298828125 3.65185546875,63 3.65185546875,63 3.65185546875,63 0.19110107421875,59.460968017578125 0.19110107421875,59.460968017578125 0.19110107421875,59.460968017578125 2,0 2,0 2,0 5.706298828125,0.025665283203125 5.706298828125,0.025665283203125 z"
+		    Fill="#000000" />
+      <Path
+		    Canvas.Left="2.2408447265625"
+		    Canvas.Top="1.091217041015625"
+		    Height="38.275421142578125"
+		    Width="2.96868896484375"
+		    Stretch="Fill"
+		    Opacity="1"
+		    Data="M 4.20098876953125,1.095550537109375 C4.20098876953125,1.095550537109375 5.20953369140625,39.285308837890625 5.20953369140625,39.285308837890625 4.83587646484375,39.284576416015625 4.4617919921875,39.288055419921875 4.084716796875,39.295654296875 3.46728515625,39.3079833984375 2.85137939453125,39.33258056640625 2.2408447265625,39.36663818359375 2.2408447265625,39.36663818359375 3.50286865234375,1.091217041015625 3.50286865234375,1.091217041015625 3.50286865234375,1.091217041015625 4.20098876953125,1.095550537109375 4.20098876953125,1.095550537109375 z"
+		    Fill="#ff0000" />
+    </Canvas>
+  </Canvas>
+</Classes:Needle>

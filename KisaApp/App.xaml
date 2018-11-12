@@ -9,5 +9,12 @@
     <ControlTemplate x:Key="SliderControlTemplate_2011LargeNeedle" TargetType="{x:Type Slider}">
       <Skin2011:LargeNeedle HorizontalAlignment="Center" VerticalAlignment="Center" MaxAngle="80" MinAngle="-80" Maximum="{TemplateBinding Maximum}" Value="{TemplateBinding Value}" Minimum="{TemplateBinding Minimum}" />
     </ControlTemplate>
+    <ControlTemplate x:Key="SliderControlTemplate_2011SmallNeedle" TargetType="{x:Type Slider}">
+      <Skin2011:SmallNeedle HorizontalAlignment="Center" VerticalAlignment="Center" MaxAngle="30" MinAngle="-30" Maximum="{TemplateBinding Maximum}" Value="{TemplateBinding Value}" Minimum="{TemplateBinding Minimum}"/>
+    </ControlTemplate>
+    <ControlTemplate x:Key="SliderControlTemplate_2011SmallNeedle_Flipped" TargetType="{x:Type Slider}">
+      <Skin2011:SmallNeedle HorizontalAlignment="Center" VerticalAlignment="Center" MaxAngle="-210" MinAngle="-150" Maximum="{TemplateBinding Maximum}" Value="{TemplateBinding Value}" Minimum="{TemplateBinding Minimum}"/>
+    </ControlTemplate>
+    <SolidColorBrush x:Key="AccentColor" Color="#FF1BA1E2"/>
   </Application.Resources>
 </Application>

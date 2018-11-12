@@ -121,6 +121,9 @@
     <Compile Include="Controls\Skin2011\Skin.xaml.cs">
       <DependentUpon>Skin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Skin2011\SmallNeedle.xaml.cs">
+      <DependentUpon>SmallNeedle.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SkinSelector.xaml.cs">
       <DependentUpon>SkinSelector.xaml</DependentUpon>
     </Compile>
@@ -129,6 +132,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Skin2011\Skin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Skin2011\SmallNeedle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
