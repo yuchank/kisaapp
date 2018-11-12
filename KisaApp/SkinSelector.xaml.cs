@@ -62,7 +62,10 @@ namespace KisaApp
         // String s = String.Format("{0:F0}", Convert.ToDouble(v));
         if (v != null)
         { 
-          Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate { _skins[0].MPH = Convert.ToInt32(Convert.ToDouble(v)); }));
+          Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate {
+            _skins[0].MPH = Convert.ToInt32(Convert.ToDouble(v));
+            _skins[0].RPM = Convert.ToInt32(Convert.ToDouble(v)*33);   // RPM = MPH * 33, it's fake
+          }));
         }
       });
 
@@ -71,7 +74,8 @@ namespace KisaApp
         // String s = String.Format("{0:F0}", v);
         if (v != null)
         {
-          Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate { _skins[0].RPM = Convert.ToInt32(Convert.ToDouble(v)); }));
+          // Do nothing
+          // Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate { _skins[0].RPM = Convert.ToInt32(Convert.ToDouble(v)); }));
         }
       });
     }
