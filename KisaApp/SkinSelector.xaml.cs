@@ -40,7 +40,7 @@ namespace KisaApp
 
     private void OnLoaded(object sender, RoutedEventArgs e)
     {
-      this.socket = IO.Socket("http://localhost:2000");
+      this.socket = IO.Socket("http://192.168.0.182:2000");
 
       if (Window.GetWindow(this) != null)
       {

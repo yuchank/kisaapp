@@ -25,15 +25,5 @@ namespace KisaApp
     {
       
     }
-
-    private void BtnReset_Click(object sender, RoutedEventArgs e)
-    {
-      // this.socket.Emit("reset", "reset");
-    }
-
-    private void BtnAttack_Click(object sender, RoutedEventArgs e)
-    {
-      // this.socket.Emit("attack", "attack");
-    }
   }
 }
