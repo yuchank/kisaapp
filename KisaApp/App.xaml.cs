@@ -34,7 +34,7 @@ namespace KisaApp
       var resources = thisAssembly.GetManifestResourceNames().Where(s => s.EndsWith(name));
       if (resources.Any())
       {
-        // 거의 대부분의 확률로 항상 1개의 항목만 로드됩니다. 만약 1개이상 로드가되면 이러한 케이스를 별도로 처리해야 합니다.
+        // 거의 대부분의 확률로 항상 1개의 항목만 로드됩니다. 만약 1개 이상 로드가 되면 이러한 케이스를 별도로 처리해야 합니다.
         var resourceName = resources.First();
         using (Stream stream = thisAssembly.GetManifestResourceStream(resourceName))
         {
