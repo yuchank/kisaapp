@@ -28,6 +28,7 @@
       <Slider x:Name="uxTemp" Template="{DynamicResource SliderControlTemplate_2011SmallNeedle}" Maximum="419" Canvas.Left="62" Canvas.Top="-81" Minimum="-40"/>
       <Slider x:Name="uxOil" Template="{DynamicResource SliderControlTemplate_2011SmallNeedle_Flipped}" Maximum="100" Canvas.Left="57" Canvas.Top="-28" Value="50"/>
       <Slider x:Name="uxBattery" Template="{DynamicResource SliderControlTemplate_2011SmallNeedle_Flipped}" Maximum="100" Canvas.Left="-57" Canvas.Top="-28" Value="90"/>
+      <Button x:Name="uxSettings" Style="{DynamicResource ButtonStyle_2011Settings}" Canvas.Left="499" Canvas.Top="-260"/>
     </Canvas>
     <Image Source="/KisaApp;component/Resources/2011/2011-Overlay.png" Stretch="Fill" IsHitTestVisible="False" d:IsLocked="True" />
   </Grid>

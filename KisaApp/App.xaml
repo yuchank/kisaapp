@@ -6,6 +6,16 @@
              StartupUri="MainWindow.xaml">
   <Application.Resources>
     <!-- Resources scoped at the Application level should be defined here. -->
+    <Style x:Key="ButtonStyle_2011Settings" TargetType="{x:Type Button}">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type Button}">
+            <Image Height="43" Source="Resources/2011/Settings-Button.png" Stretch="Fill" Width="43"/>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+      <Setter Property="Cursor" Value="Hand"/>
+    </Style>
     <ControlTemplate x:Key="SliderControlTemplate_2011LargeNeedle" TargetType="{x:Type Slider}">
       <Skin2011:LargeNeedle HorizontalAlignment="Center" VerticalAlignment="Center" MaxAngle="80" MinAngle="-80" Maximum="{TemplateBinding Maximum}" Value="{TemplateBinding Value}" Minimum="{TemplateBinding Minimum}" />
     </ControlTemplate>

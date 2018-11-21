@@ -42,15 +42,17 @@ namespace KisaApp
     {
       this.socket = IO.Socket("http://192.168.0.182:2000");
 
-      if (Window.GetWindow(this) != null)
-      {
-        WindowInteropHelper helper = new WindowInteropHelper(Window.GetWindow(this));
-        HwndSource.FromHwnd(helper.Handle).AddHook(new HwndSourceHook(this.WndProc));
-      }
+      //if (Window.GetWindow(this) != null)
+      //{
+      //  WindowInteropHelper helper = new WindowInteropHelper(Window.GetWindow(this));
+      //  HwndSource.FromHwnd(helper.Handle).AddHook(new HwndSourceHook(this.WndProc));
+      //}
 
       _skins[0] = uxSkin2011;
       _skins[0].Fuel = 90;
       _skins[0].Temperature = 20;
+
+      uxSkin2011.uxSettings.Click += uxSettings_Click;
 
       this.socket.On(Socket.EVENT_CONNECT, () => {
       });
@@ -65,8 +67,10 @@ namespace KisaApp
         if (v != null)
         { 
           Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate {
+            Random r = new Random();
+            int rand = r.Next(100, 300);
             _skins[0].MPH = Convert.ToInt32(Convert.ToDouble(v));
-            _skins[0].RPM = Convert.ToInt32(Convert.ToDouble(v)*33);   // RPM = MPH * 33, it's fake
+            _skins[0].RPM = Convert.ToInt32(Convert.ToDouble(v)*33 + rand);   // RPM = MPH * 33, it's fake
           }));
         }
       });
@@ -82,38 +86,44 @@ namespace KisaApp
       });
     }
 
+    void uxSettings_Click(object sender, RoutedEventArgs e)
+    {
+      Application.Current.Shutdown();
+    }
+
     private void OnUnloaded(object sender, RoutedEventArgs e)
     {
       this.socket.Disconnect();
+      this.socket.Close();
     }
 
-    IntPtr WndProc(IntPtr hWnd, int nMsg, IntPtr wParam, IntPtr lParam, ref bool handled)
-    {
-      UInt32 WM_DEVICECHANGE = 0x0219;
-      UInt32 DBT_DEVTUP_VOLUME = 0x02;
-      UInt32 DBT_DEVICEARRIVAL = 0x8000;
-      UInt32 DBT_DEVICEREMOVECOMPLETE = 0x8004;
+    //IntPtr WndProc(IntPtr hWnd, int nMsg, IntPtr wParam, IntPtr lParam, ref bool handled)
+    //{
+    //  UInt32 WM_DEVICECHANGE = 0x0219;
+    //  UInt32 DBT_DEVTUP_VOLUME = 0x02;
+    //  UInt32 DBT_DEVICEARRIVAL = 0x8000;
+    //  UInt32 DBT_DEVICEREMOVECOMPLETE = 0x8004;
 
-      // USB IN
-      if ((nMsg == WM_DEVICECHANGE) && (wParam.ToInt32() == DBT_DEVICEARRIVAL))
-      {
-        int devType = Marshal.ReadInt32(lParam, 4);
+    //  // USB IN
+    //  if ((nMsg == WM_DEVICECHANGE) && (wParam.ToInt32() == DBT_DEVICEARRIVAL))
+    //  {
+    //    int devType = Marshal.ReadInt32(lParam, 4);
 
-        if (devType == DBT_DEVTUP_VOLUME)
-        {
-          // this.socket.Emit("attack", "attack");
-        }
-      }
+    //    if (devType == DBT_DEVTUP_VOLUME)
+    //    {
+    //      // this.socket.Emit("attack", "attack");
+    //    }
+    //  }
 
-      // USB OUT
-      if ((nMsg == WM_DEVICECHANGE) && (wParam.ToInt32() == DBT_DEVICEREMOVECOMPLETE))
-      {
-        int devType = Marshal.ReadInt32(lParam, 4);
-        if (devType == DBT_DEVTUP_VOLUME)
-        {
-        }
-      }
-      return IntPtr.Zero;
-    }
+    //  // USB OUT
+    //  if ((nMsg == WM_DEVICECHANGE) && (wParam.ToInt32() == DBT_DEVICEREMOVECOMPLETE))
+    //  {
+    //    int devType = Marshal.ReadInt32(lParam, 4);
+    //    if (devType == DBT_DEVTUP_VOLUME)
+    //    {
+    //    }
+    //  }
+    //  return IntPtr.Zero;
+    //}
   }
 }
