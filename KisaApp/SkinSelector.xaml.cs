@@ -40,7 +40,7 @@ namespace KisaApp
 
     private void OnLoaded(object sender, RoutedEventArgs e)
     {
-      this.socket = IO.Socket("http://192.168.0.182:2000");
+      this.socket = IO.Socket("http://192.168.1.2:2000");
 
       //if (Window.GetWindow(this) != null)
       //{
@@ -63,7 +63,6 @@ namespace KisaApp
 
       this.socket.On("speed-cs", (v) =>
       {
-        // String s = String.Format("{0:F0}", Convert.ToDouble(v));
         if (v != null)
         { 
           Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate {
@@ -75,14 +74,12 @@ namespace KisaApp
         }
       });
 
-      this.socket.On("gear-cs", (v) =>
+      this.socket.On("reset", () =>
       {
-        // String s = String.Format("{0:F0}", v);
-        if (v != null)
-        {
-          // Do nothing
-          // Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate { _skins[0].RPM = Convert.ToInt32(Convert.ToDouble(v)); }));
-        }
+        Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate {
+          _skins[0].MPH = 0;
+          _skins[0].RPM = 0; 
+        }));
       });
     }
 
